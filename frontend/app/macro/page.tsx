@@ -9,7 +9,7 @@ interface MacroData {
   yield_curve_inverted: boolean | null;
 }
 
-function fmt(n: number | null, decimals = 3): string {
+function fmt(n: number | null | undefined, decimals = 3): string {
   return n != null ? `${n.toFixed(decimals)}%` : "—";
 }
 
