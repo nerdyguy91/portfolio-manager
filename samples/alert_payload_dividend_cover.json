@@ -1,0 +1,14 @@
+{
+  "type": "dividend_cover",
+  "severity": "Critical",
+  "asset": "LGEN.L",
+  "message": "Dividend cover for LGEN.L is 1.1 — below critical threshold of 1.3. EPS: £0.22, Dividend per share: £0.20.",
+  "context": {
+    "ticker": "LGEN.L",
+    "eps": 0.22,
+    "dividend_per_share": 0.20,
+    "cover": 1.1,
+    "critical_threshold": 1.3,
+    "warning_threshold": 1.7
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "trigger": "LGEN.L's dividend cover has fallen to 1.1, meaning earnings per share of £0.22 cover the £0.20 dividend by only 10% above the payment — below the critical threshold of 1.3.",
+  "why_it_matters": "A dividend cover below 1.3 signals that the company is paying out nearly all of its earnings as dividends, leaving very little buffer if profits decline. For a dividend investor, this raises the risk of a future dividend cut, which would reduce income and likely cause the share price to fall.",
+  "suggested_actions": [
+    "Review LGEN.L's latest earnings report and management guidance on dividend policy",
+    "Consider reducing position size to limit exposure if the dividend is cut",
+    "Monitor next quarterly EPS closely — two consecutive quarters below cover 1.3 warrants exit consideration"
+  ],
+  "confidence": 0.88,
+  "_meta": {
+    "note": "This is a sample expected output for schema validation testing. Use with tools/explanation_tool.py to verify output structure.",
+    "alert_type": "dividend_cover",
+    "severity": "Critical",
+    "asset": "LGEN.L",
+    "regime_at_time": "Normal"
+  }
+}

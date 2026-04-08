@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["type", "severity", "message"],
+  "additionalProperties": true,
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "dividend_cover", "cadi_break", "yield_spike", "market_cap_low",
+        "ftse_drawdown", "vix_spike",
+        "yield_curve_inversion", "commodity_spike", "bond_yield_shock"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["Critical", "High", "Medium", "Low"]
+    },
+    "asset": {
+      "type": ["string", "null"]
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context": {
+      "type": "object"
+    }
+  }
+}

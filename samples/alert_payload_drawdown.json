@@ -1,0 +1,13 @@
+{
+  "type": "ftse_drawdown",
+  "severity": "High",
+  "asset": "^FTSE",
+  "message": "FTSE 100 is down 16.2% from its 90-day high. Current: 7,423. 90-day high: 8,857.",
+  "context": {
+    "drawdown_pct": 0.162,
+    "drawdown_level": 3,
+    "current_price": 7423.5,
+    "recent_high": 8857.2,
+    "window_days": 90
+  }
+}

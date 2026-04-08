@@ -1,0 +1,37 @@
+[
+  {
+    "ticker": "LGEN.L",
+    "shares": 2500,
+    "cost_basis": 2.45,
+    "sector": "Insurance",
+    "sector_avg_yield": 0.04
+  },
+  {
+    "ticker": "ULVR.L",
+    "shares": 150,
+    "cost_basis": 38.20,
+    "sector": "Consumer Staples",
+    "sector_avg_yield": 0.03
+  },
+  {
+    "ticker": "NG.L",
+    "shares": 1800,
+    "cost_basis": 9.85,
+    "sector": "Utilities",
+    "sector_avg_yield": 0.05
+  },
+  {
+    "ticker": "JNJ",
+    "shares": 75,
+    "cost_basis": 155.00,
+    "sector": "Healthcare",
+    "sector_avg_yield": 0.025
+  },
+  {
+    "ticker": "KO",
+    "shares": 120,
+    "cost_basis": 58.50,
+    "sector": "Consumer Staples",
+    "sector_avg_yield": 0.03
+  }
+]
