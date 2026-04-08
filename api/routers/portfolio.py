@@ -20,7 +20,9 @@ def list_portfolio():
     for h in holdings:
         financials = get_latest_financial(h.ticker)
         prices = get_market_data(h.ticker, limit=1)
-        current_price = prices[0].price if prices else None
+        raw_price = prices[0].price if prices else None
+        import math
+        current_price = None if (raw_price is None or math.isnan(raw_price)) else raw_price
 
         # Dividend cover
         cover = None
