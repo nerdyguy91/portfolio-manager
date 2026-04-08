@@ -15,7 +15,7 @@ init_db()
 
 app = FastAPI(title="Portfolio Monitor API", version="1.0.0")
 
-origins = os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
+origins = [o.strip().rstrip("/") for o in os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
