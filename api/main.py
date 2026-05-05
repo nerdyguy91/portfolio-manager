@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routers import portfolio, alerts, market, macro
+from api.routers import portfolio, alerts, market, macro, internal
 from tools.db import init_db
 
 init_db()
@@ -28,6 +28,7 @@ app.include_router(portfolio.router, prefix="/portfolio", tags=["portfolio"])
 app.include_router(alerts.router,    prefix="/alerts",    tags=["alerts"])
 app.include_router(market.router,    prefix="/market",    tags=["market"])
 app.include_router(macro.router,     prefix="/macro",     tags=["macro"])
+app.include_router(internal.router,  prefix="/internal",  tags=["internal"])
 
 
 @app.get("/risk-score")
