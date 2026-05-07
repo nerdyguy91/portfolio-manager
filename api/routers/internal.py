@@ -9,8 +9,6 @@ import os
 from fastapi import APIRouter, HTTPException, Header
 from typing import Annotated
 
-from scheduler.runner import daily_job, weekly_job
-
 router = APIRouter()
 
 _SECRET = os.getenv("INTERNAL_SECRET", "")
@@ -26,6 +24,7 @@ def _check_secret(x_internal_secret: str | None):
 @router.post("/run/daily")
 def trigger_daily(x_internal_secret: Annotated[str | None, Header()] = None):
     _check_secret(x_internal_secret)
+    from scheduler.runner import daily_job
     daily_job()
     return {"status": "ok", "job": "daily"}
 
@@ -33,5 +32,6 @@ def trigger_daily(x_internal_secret: Annotated[str | None, Header()] = None):
 @router.post("/run/weekly")
 def trigger_weekly(x_internal_secret: Annotated[str | None, Header()] = None):
     _check_secret(x_internal_secret)
+    from scheduler.runner import weekly_job
     weekly_job()
     return {"status": "ok", "job": "weekly"}
