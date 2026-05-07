@@ -6,7 +6,9 @@ Protect these with the INTERNAL_SECRET env var to prevent unauthorised triggerin
 """
 
 import os
+import traceback
 from fastapi import APIRouter, HTTPException, Header
+from fastapi.responses import JSONResponse
 from typing import Annotated
 
 router = APIRouter()
@@ -24,14 +26,20 @@ def _check_secret(x_internal_secret: str | None):
 @router.post("/run/daily")
 def trigger_daily(x_internal_secret: Annotated[str | None, Header()] = None):
     _check_secret(x_internal_secret)
-    from scheduler.runner import daily_job
-    daily_job()
-    return {"status": "ok", "job": "daily"}
+    try:
+        from scheduler.runner import daily_job
+        daily_job()
+        return {"status": "ok", "job": "daily"}
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": str(e), "trace": traceback.format_exc()})
 
 
 @router.post("/run/weekly")
 def trigger_weekly(x_internal_secret: Annotated[str | None, Header()] = None):
     _check_secret(x_internal_secret)
-    from scheduler.runner import weekly_job
-    weekly_job()
-    return {"status": "ok", "job": "weekly"}
+    try:
+        from scheduler.runner import weekly_job
+        weekly_job()
+        return {"status": "ok", "job": "weekly"}
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": str(e), "trace": traceback.format_exc()})
